@@ -1,7 +1,7 @@
 # AVD Quickstart Containerlab
 
 > **WARNING**
-I modify this to redcue the number of nodes and hence the hardware pressure
+I modify this repository to reduce the number of nodes and hence the hardware pressure
 > This repository is still under construction. It's fully functional, but has number of limitations.
 > For example:
 > - README is still work-in-progress
