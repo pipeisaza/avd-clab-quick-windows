@@ -51,19 +51,19 @@
 
 | Management Interface | description | Type | VRF | IP Address | Gateway |
 | -------------------- | ----------- | ---- | --- | ---------- | ------- |
-| Management1 | oob_management | oob | MGMT | 192.168.123.11/24 | 192.168.123.1 |
+| Management0 | oob_management | oob | MGMT | 192.168.123.11/24 | 192.168.123.1 |
 
 #### IPv6
 
 | Management Interface | description | Type | VRF | IPv6 Address | IPv6 Gateway |
 | -------------------- | ----------- | ---- | --- | ------------ | ------------ |
-| Management1 | oob_management | oob | MGMT | -  | - |
+| Management0 | oob_management | oob | MGMT | - | - |
 
 ### Management Interfaces Device Configuration
 
 ```eos
 !
-interface Management1
+interface Management0
    description oob_management
    no shutdown
    vrf MGMT
@@ -77,7 +77,6 @@ interface Management1
 ### DNS Domain Device Configuration
 
 ```eos
-!
 dns domain lab.net
 !
 ```
@@ -128,9 +127,9 @@ ntp server vrf MGMT time3.google.com
 
 ### Management API HTTP Summary
 
-| HTTP | HTTPS |
-| ---- | ----- |
-| False | True |
+| HTTP | HTTPS | Default Services |
+| ---- | ----- | ---------------- |
+| False | True | - |
 
 ### Management API VRF Access
 
@@ -156,9 +155,9 @@ management api http-commands
 
 ### Local Users Summary
 
-| User | Privilege | Role |
-| ---- | --------- | ---- |
-| cvpadmin | 15 | network-admin |
+| User | Privilege | Role | Disabled |
+| ---- | --------- | ---- | -------- |
+| cvpadmin | 15 | network-admin | False |
 
 ### Local Users Device Configuration
 
@@ -171,8 +170,9 @@ username cvpadmin privilege 15 role network-admin secret sha512 $6$aQjjIocu2Pxl0
 
 ## Management Security Summary
 
-Management Security password encryption is common.
-
+| Settings | Value |
+| -------- | ----- |
+| Common password encryption key | True |
 
 ## Management Security Configuration
 
@@ -206,9 +206,6 @@ daemon TerminAttr
 ## Spanning Tree Summary
 
 STP mode: **none**
-
-### Global Spanning-Tree Settings
-
 
 ## Spanning Tree Device Configuration
 
@@ -249,10 +246,8 @@ vlan internal order ascending range 1006 1199
 
 | Interface | Description | Type | Channel Group | IP Address | VRF |  MTU | Shutdown | ACL In | ACL Out |
 | --------- | ----------- | -----| ------------- | ---------- | ----| ---- | -------- | ------ | ------- |
-| Ethernet1/1 | P2P_LINK_TO_LEAF1_Ethernet49/1 | routed | - | 172.31.255.0/31 | default | 1500 | false | - | - |
-| Ethernet2/1 | P2P_LINK_TO_LEAF2_Ethernet49/1 | routed | - | 172.31.255.64/31 | default | 1500 | false | - | - |
-| Ethernet3/1 | P2P_LINK_TO_LEAF3_Ethernet49/1 | routed | - | 172.31.255.128/31 | default | 1500 | false | - | - |
-| Ethernet4/1 | P2P_LINK_TO_LEAF4_Ethernet49/1 | routed | - | 172.31.255.192/31 | default | 1500 | false | - | - |
+| Ethernet1/1 | P2P_LINK_TO_LEAF1_Ethernet49/1 | routed | - | 172.31.255.0/31 | default | 1500 | False | - | - |
+| Ethernet2/1 | P2P_LINK_TO_LEAF2_Ethernet49/1 | routed | - | 172.31.255.64/31 | default | 1500 | False | - | - |
 
 ### Ethernet Interfaces Device Configuration
 
@@ -271,20 +266,6 @@ interface Ethernet2/1
    mtu 1500
    no switchport
    ip address 172.31.255.64/31
-!
-interface Ethernet3/1
-   description P2P_LINK_TO_LEAF3_Ethernet49/1
-   no shutdown
-   mtu 1500
-   no switchport
-   ip address 172.31.255.128/31
-!
-interface Ethernet4/1
-   description P2P_LINK_TO_LEAF4_Ethernet49/1
-   no shutdown
-   mtu 1500
-   no switchport
-   ip address 172.31.255.192/31
 ```
 
 ## Loopback Interfaces
@@ -330,7 +311,8 @@ service routing protocols model multi-agent
 
 | VRF | Routing Enabled |
 | --- | --------------- |
-| default | true|| MGMT | false |
+| default | True |
+| MGMT | false |
 
 ### IP Routing Device Configuration
 
@@ -345,8 +327,8 @@ no ip routing vrf MGMT
 
 | VRF | Routing Enabled |
 | --- | --------------- |
-| default | false || MGMT | false |
-
+| default | False |
+| MGMT | false |
 
 ## Static Routes
 
@@ -354,7 +336,7 @@ no ip routing vrf MGMT
 
 | VRF | Destination Prefix | Next Hop IP             | Exit interface      | Administrative Distance       | Tag               | Route Name                    | Metric         |
 | --- | ------------------ | ----------------------- | ------------------- | ----------------------------- | ----------------- | ----------------------------- | -------------- |
-| MGMT  | 0.0.0.0/0 |  192.168.123.1  |  -  |  1  |  -  |  -  |  - |
+| MGMT | 0.0.0.0/0 | 192.168.123.1 | - | 1 | - | - | - |
 
 ### Static Routes Device Configuration
 
@@ -384,7 +366,7 @@ ip route vrf MGMT 0.0.0.0/0 192.168.123.1
 | Address Family | evpn |
 | Next-hop unchanged | True |
 | Source | Loopback0 |
-| Bfd | true |
+| BFD | True |
 | Ebgp multihop | 3 |
 | Send community | all |
 | Maximum routes | 0 (no limit) |
@@ -399,16 +381,12 @@ ip route vrf MGMT 0.0.0.0/0 192.168.123.1
 
 ### BGP Neighbors
 
-| Neighbor | Remote AS | VRF | Send-community | Maximum-routes |
-| -------- | --------- | --- | -------------- | -------------- |
-| 172.31.255.1 | 65101 | default | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS |
-| 172.31.255.65 | 65101 | default | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS |
-| 172.31.255.129 | 65102 | default | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS |
-| 172.31.255.193 | 65102 | default | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS |
-| 192.0.255.129 | 65101 | default | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS |
-| 192.0.255.130 | 65101 | default | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS |
-| 192.0.255.131 | 65102 | default | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS |
-| 192.0.255.132 | 65102 | default | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS |
+| Neighbor | Remote AS | VRF | Shutdown | Send-community | Maximum-routes | Allowas-in | BFD | RIB Pre-Policy Retain | Route-Reflector Client |
+| -------- | --------- | --- | -------- | -------------- | -------------- | ---------- | --- | --------------------- | ---------------------- |
+| 172.31.255.1 | 65101 | default | - | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS | - | - | - | - |
+| 172.31.255.65 | 65102 | default | - | Inherited from peer group IPv4-UNDERLAY-PEERS | Inherited from peer group IPv4-UNDERLAY-PEERS | - | - | - | - |
+| 192.0.255.129 | 65101 | default | - | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS | - | Inherited from peer group EVPN-OVERLAY-PEERS | - | - |
+| 192.0.255.130 | 65102 | default | - | Inherited from peer group EVPN-OVERLAY-PEERS | Inherited from peer group EVPN-OVERLAY-PEERS | - | Inherited from peer group EVPN-OVERLAY-PEERS | - | - |
 
 ### Router BGP EVPN Address Family
 
@@ -441,26 +419,14 @@ router bgp 65001
    neighbor 172.31.255.1 remote-as 65101
    neighbor 172.31.255.1 description leaf1_Ethernet49/1
    neighbor 172.31.255.65 peer group IPv4-UNDERLAY-PEERS
-   neighbor 172.31.255.65 remote-as 65101
+   neighbor 172.31.255.65 remote-as 65102
    neighbor 172.31.255.65 description leaf2_Ethernet49/1
-   neighbor 172.31.255.129 peer group IPv4-UNDERLAY-PEERS
-   neighbor 172.31.255.129 remote-as 65102
-   neighbor 172.31.255.129 description leaf3_Ethernet49/1
-   neighbor 172.31.255.193 peer group IPv4-UNDERLAY-PEERS
-   neighbor 172.31.255.193 remote-as 65102
-   neighbor 172.31.255.193 description leaf4_Ethernet49/1
    neighbor 192.0.255.129 peer group EVPN-OVERLAY-PEERS
    neighbor 192.0.255.129 remote-as 65101
    neighbor 192.0.255.129 description leaf1
    neighbor 192.0.255.130 peer group EVPN-OVERLAY-PEERS
-   neighbor 192.0.255.130 remote-as 65101
+   neighbor 192.0.255.130 remote-as 65102
    neighbor 192.0.255.130 description leaf2
-   neighbor 192.0.255.131 peer group EVPN-OVERLAY-PEERS
-   neighbor 192.0.255.131 remote-as 65102
-   neighbor 192.0.255.131 description leaf3
-   neighbor 192.0.255.132 peer group EVPN-OVERLAY-PEERS
-   neighbor 192.0.255.132 remote-as 65102
-   neighbor 192.0.255.132 description leaf4
    redistribute connected route-map RM-CONN-2-BGP
    !
    address-family evpn
@@ -517,9 +483,9 @@ ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY
 
 #### RM-CONN-2-BGP
 
-| Sequence | Type | Match and/or Set |
-| -------- | ---- | ---------------- |
-| 10 | permit | match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY |
+| Sequence | Type | Match | Set | Sub-Route-Map | Continue |
+| -------- | ---- | ----- | --- | ------------- | -------- |
+| 10 | permit | ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY | - | - | - |
 
 ### Route-maps Device Configuration
 

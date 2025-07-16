@@ -13,10 +13,10 @@ router_bgp:
       type: evpn
       update_source: Loopback0
       bfd: true
-      ebgp_multihop: '3'
       password: $1c$caHDPKDBzOjl6ZrDQLicDQ==
       send_community: all
       maximum_routes: 0
+      ebgp_multihop: 3
       next_hop_unchanged: true
   address_family_ipv4:
     peer_groups:
@@ -34,16 +34,8 @@ router_bgp:
       description: leaf1_Ethernet50/1
     172.31.255.67:
       peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65101'
+      remote_as: '65102'
       description: leaf2_Ethernet50/1
-    172.31.255.131:
-      peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65102'
-      description: leaf3_Ethernet50/1
-    172.31.255.195:
-      peer_group: IPv4-UNDERLAY-PEERS
-      remote_as: '65102'
-      description: leaf4_Ethernet50/1
     192.0.255.129:
       peer_group: EVPN-OVERLAY-PEERS
       description: leaf1
@@ -51,14 +43,6 @@ router_bgp:
     192.0.255.130:
       peer_group: EVPN-OVERLAY-PEERS
       description: leaf2
-      remote_as: '65101'
-    192.0.255.131:
-      peer_group: EVPN-OVERLAY-PEERS
-      description: leaf3
-      remote_as: '65102'
-    192.0.255.132:
-      peer_group: EVPN-OVERLAY-PEERS
-      description: leaf4
       remote_as: '65102'
   address_family_evpn:
     peer_groups:
@@ -101,7 +85,7 @@ vrfs:
   MGMT:
     ip_routing: false
 management_interfaces:
-  Management1:
+  Management0:
     description: oob_management
     shutdown: false
     vrf: MGMT
@@ -118,37 +102,19 @@ ethernet_interfaces:
     peer_interface: Ethernet50/1
     peer_type: l3leaf
     description: P2P_LINK_TO_LEAF1_Ethernet50/1
+    shutdown: false
     mtu: 1500
     type: routed
-    shutdown: false
     ip_address: 172.31.255.2/31
   Ethernet2/1:
     peer: leaf2
     peer_interface: Ethernet50/1
     peer_type: l3leaf
     description: P2P_LINK_TO_LEAF2_Ethernet50/1
+    shutdown: false
     mtu: 1500
     type: routed
-    shutdown: false
     ip_address: 172.31.255.66/31
-  Ethernet3/1:
-    peer: leaf3
-    peer_interface: Ethernet50/1
-    peer_type: l3leaf
-    description: P2P_LINK_TO_LEAF3_Ethernet50/1
-    mtu: 1500
-    type: routed
-    shutdown: false
-    ip_address: 172.31.255.130/31
-  Ethernet4/1:
-    peer: leaf4
-    peer_interface: Ethernet50/1
-    peer_type: l3leaf
-    description: P2P_LINK_TO_LEAF4_Ethernet50/1
-    mtu: 1500
-    type: routed
-    shutdown: false
-    ip_address: 172.31.255.194/31
 loopback_interfaces:
   Loopback0:
     description: EVPN_Overlay_Peering

@@ -23,6 +23,7 @@ servers:
       port_channel:
         description: leaf1_to_host11
         mode: active
+        short_esi: d804:eca6:ffc4
   host12:
     rack: pod1_rack
     adapters:
@@ -33,23 +34,26 @@ servers:
       port_channel:
         description: leaf3_to_host12
         mode: active
-  host21:
-    rack: pod2_rack
-    adapters:
-    - switch_ports: ['Ethernet1/1', 'Ethernet1/1']
-      switches: ['leaf3', 'leaf4']
-      endpoint_ports: [ leaf3_Ethernet1/1,leaf4_Ethernet1/1, ]
-      profile: ACCESS_PROFILE
-      port_channel:
-        description: leaf3_to_host21
-        mode: active
-  host22:
-    rack: pod2_rack
-    adapters:
-    - switch_ports: ['Ethernet1/2', 'Ethernet1/2']
-      switches: ['leaf3', 'leaf4']
-      endpoint_ports: [ leaf3_Ethernet1/2,leaf4_Ethernet1/2, ]
-      profile: VLAN150_PROFILE
-      port_channel:
-        description: leaf3_to_host22
-        mode: active
+        short_esi: 1509:401c:dd4a
+#  host21:
+#    rack: pod2_rack
+#    adapters:
+#    - switch_ports: ['Ethernet1/1', 'Ethernet1/1']
+#      switches: ['leaf3', 'leaf4']
+#      endpoint_ports: [ leaf3_Ethernet1/1,leaf4_Ethernet1/1, ]
+#      profile: ACCESS_PROFILE
+#      port_channel:
+#        description: leaf3_to_host21
+#        mode: active
+#        short_esi: 43fb:64ab:210c
+#  host22:
+#    rack: pod2_rack
+#    adapters:
+#    - switch_ports: ['Ethernet1/2', 'Ethernet1/2']
+#      switches: ['leaf3', 'leaf4']
+#      endpoint_ports: [ leaf3_Ethernet1/2,leaf4_Ethernet1/2, ]
+#      profile: VLAN150_PROFILE
+#      port_channel:
+#        description: leaf3_to_host22
+#        mode: active
+#        short_esi: 4640:0623:ea6b

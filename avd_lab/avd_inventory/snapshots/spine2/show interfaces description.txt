@@ -1,0 +1,5 @@
+Interface                      Status         Protocol           Description
+Et1/1                          up             up                 P2P_LINK_TO_LEAF1_Ethernet50/1
+Et2/1                          up             up                 P2P_LINK_TO_LEAF2_Ethernet50/1
+Lo0                            up             up                 EVPN_Overlay_Peering
+Ma0                            up             up                 oob_management

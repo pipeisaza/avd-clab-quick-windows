@@ -1,0 +1,12 @@
+Interface                      Status         Protocol           Description
+Et49/1                         up             up                 P2P_LINK_TO_SPINE1_Ethernet1/1
+Et50/1                         up             up                 P2P_LINK_TO_SPINE2_Ethernet1/1
+Lo0                            up             up                 EVPN_Overlay_Peering
+Lo1                            up             up                 VTEP_VXLAN_Tunnel_Source
+Lo100                          up             up                 TEST_VRF_VTEP_DIAGNOSTICS
+Ma0                            up             up                 oob_management
+Po11                           down           lowerlayerdown     host11_leaf1_to_host11
+Po12                           down           lowerlayerdown     host12_leaf3_to_host12
+Vl100                          up             up                 TENANT_A_BGP_TO_COMPUTE
+Vl4097                         up             up                 
+Vx1                            up             up                 leaf1_VTEP

@@ -1,0 +1,13 @@
+Last table change time   : 0:19:06 ago
+Number of table inserts  : 5
+Number of table deletes  : 0
+Number of table drops    : 0
+Number of table age-outs : 0
+
+Port           Neighbor Device ID       Neighbor Port ID    TTL
+----------- ------------------------ ---------------------- ---
+Et1/1          leaf1.lab.net            Ethernet50/1        120
+Et2/1          leaf2.lab.net            Ethernet50/1        120
+Ma0            leaf2.lab.net            Management0         120
+Ma0            spine1.lab.net           Management0         120
+Ma0            leaf1.lab.net            Management0         120

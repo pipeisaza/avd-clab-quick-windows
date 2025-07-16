@@ -1,0 +1,1637 @@
+devices:
+  leaf1:
+    "show lldp neighbors":
+      lldpNeighbors:
+      - neighborDevice: spine1.lab.net
+        neighborPort: Ethernet1/1
+        port: Ethernet49/1
+        ttl: 120
+      - neighborDevice: spine2.lab.net
+        neighborPort: Ethernet1/1
+        port: Ethernet50/1
+        ttl: 120
+      - neighborDevice: spine2.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: leaf2.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: spine1.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      tablesAgeOuts: 0
+      tablesDeletes: 0
+      tablesDrops: 0
+      tablesInserts: 5
+      tablesLastChangeTime: 1752573287.5463603
+    "show ip interface brief":
+      interfaces:
+        Ethernet49/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.1
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet49/1
+          nonRoutableClassEIntf: false
+        Ethernet50/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.3
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet50/1
+          nonRoutableClassEIntf: false
+        Loopback0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.0.255.129
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback0
+          nonRoutableClassEIntf: false
+        Loopback1:
+          interfaceAddress:
+            ipAddr:
+              address: 192.0.254.1
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback1
+          nonRoutableClassEIntf: false
+        Loopback100:
+          interfaceAddress:
+            ipAddr:
+              address: 10.255.1.1
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback100
+          nonRoutableClassEIntf: false
+        Management0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.168.123.21
+              maskLen: 24
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Management0
+          nonRoutableClassEIntf: false
+        Vlan100:
+          interfaceAddress:
+            ipAddr:
+              address: 10.100.100.1
+              maskLen: 24
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Vlan100
+          nonRoutableClassEIntf: false
+        Vlan4097:
+          interfaceAddress:
+            ipAddr:
+              address: 0.0.0.0
+              maskLen: 0
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 9164
+          name: Vlan4097
+          nonRoutableClassEIntf: false
+    "show interfaces description":
+      interfaceDescriptions:
+        Ethernet49/1:
+          description: P2P_LINK_TO_SPINE1_Ethernet1/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Ethernet50/1:
+          description: P2P_LINK_TO_SPINE2_Ethernet1/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback0:
+          description: EVPN_Overlay_Peering
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback1:
+          description: VTEP_VXLAN_Tunnel_Source
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback100:
+          description: TEST_VRF_VTEP_DIAGNOSTICS
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Management0:
+          description: oob_management
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Port-Channel11:
+          description: host11_leaf1_to_host11
+          interfaceStatus: down
+          lineProtocolStatus: lowerLayerDown
+        Port-Channel12:
+          description: host12_leaf3_to_host12
+          interfaceStatus: down
+          lineProtocolStatus: lowerLayerDown
+        Vlan100:
+          description: TENANT_A_BGP_TO_COMPUTE
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Vlan4097:
+          description: ''
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Vxlan1:
+          description: leaf1_VTEP
+          interfaceStatus: up
+          lineProtocolStatus: up
+    "show version":
+      architecture: x86_64
+      bootupTimestamp: 1752572736.901067
+      configMacAddress: 00:00:00:00:00:00
+      hardwareRevision: ''
+      hwMacAddress: 00:00:00:00:00:00
+      imageFormatVersion: '1.0'
+      imageOptimization: None
+      internalBuildId: 375a0395-b269-4d4c-b708-8d7617e4924b
+      internalVersion: 4.34.1F-41910311.orinocorel
+      isIntlVersion: false
+      kernelVersion: 6.6.87.2-microsoft-standard-WSL2
+      memFree: 1392404
+      memTotal: 8064240
+      mfgName: Arista
+      modelName: cEOSLab
+      serialNumber: 3D8E8EA46CCFA41A7A783BC21B61D366
+      systemMacAddress: 00:1c:73:78:2a:3e
+      uptime: 1714.0183250904083
+      version: 4.34.1F-41910311.orinocorel (engineering build)
+    "show running-config":
+      cmds:
+        daemon TerminAttr:
+          cmds:
+            ? exec /usr/bin/TerminAttr -cvaddr=192.168.122.241:9910 -cvauth=key,qwerty -cvvrf=MGMT
+              -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent
+              -taillogs
+            : null
+            no shutdown: null
+          comments: []
+        dns domain lab.net: null
+        hostname leaf1: null
+        interface Ethernet1/1:
+          cmds:
+            channel-group 11 mode active: null
+            description host11_leaf1_Ethernet1/1: null
+          comments: []
+        interface Ethernet1/2:
+          cmds:
+            channel-group 12 mode active: null
+            description host12_leaf1_Ethernet1/2: null
+          comments: []
+        interface Ethernet49/1:
+          cmds:
+            description P2P_LINK_TO_SPINE1_Ethernet1/1: null
+            ip address 172.31.255.1/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Ethernet50/1:
+          cmds:
+            description P2P_LINK_TO_SPINE2_Ethernet1/1: null
+            ip address 172.31.255.3/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Loopback0:
+          cmds:
+            description EVPN_Overlay_Peering: null
+            ip address 192.0.255.129/32: null
+          comments: []
+        interface Loopback1:
+          cmds:
+            description VTEP_VXLAN_Tunnel_Source: null
+            ip address 192.0.254.1/32: null
+          comments: []
+        interface Loopback100:
+          cmds:
+            description TEST_VRF_VTEP_DIAGNOSTICS: null
+            ip address 10.255.1.1/32: null
+            vrf TEST_VRF: null
+          comments: []
+        interface Management0:
+          cmds:
+            description oob_management: null
+            ip address 192.168.123.21/24: null
+            vrf MGMT: null
+          comments: []
+        interface Port-Channel11:
+          cmds:
+            description host11_leaf1_to_host11: null
+            evpn ethernet-segment:
+              cmds:
+                identifier 0000:0000:d804:eca6:ffc4: null
+                route-target import d8:04:ec:a6:ff:c4: null
+              comments: []
+            lacp system-id d804.eca6.ffc4: null
+            switchport access vlan 200: null
+          comments: []
+        interface Port-Channel12:
+          cmds:
+            description host12_leaf3_to_host12: null
+            evpn ethernet-segment:
+              cmds:
+                identifier 0000:0000:1509:401c:dd4a: null
+                route-target import 15:09:40:1c:dd:4a: null
+              comments: []
+            lacp system-id 1509.401c.dd4a: null
+            switchport mode trunk: null
+            switchport trunk allowed vlan 100-150,200: null
+          comments: []
+        interface Vlan100:
+          cmds:
+            description TENANT_A_BGP_TO_COMPUTE: null
+            ip address virtual 10.100.100.1/24: null
+            vrf TEST_VRF: null
+          comments: []
+        interface Vxlan1:
+          cmds:
+            description leaf1_VTEP: null
+            vxlan source-interface Loopback1: null
+            vxlan udp-port 4789: null
+            vxlan vlan 100 vni 10100: null
+            vxlan vlan 200 vni 10200: null
+            vxlan vrf TEST_VRF vni 10: null
+          comments: []
+        ip address virtual source-nat vrf TEST_VRF address 10.255.1.1: null
+        ip name-server vrf MGMT 8.8.8.8: null
+        ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY:
+          cmds:
+            seq 10 permit 192.0.255.128/25 eq 32: null
+            seq 20 permit 192.0.254.0/24 eq 32: null
+          comments: []
+        ip route vrf MGMT 0.0.0.0/0 192.168.123.1: null
+        ip routing: null
+        ip routing vrf TEST_VRF: null
+        ip virtual-router mac-address 00:1c:73:00:dc:01: null
+        management api http-commands:
+          cmds:
+            no shutdown: null
+            vrf MGMT:
+              cmds:
+                no shutdown: null
+              comments: []
+          comments: []
+        management security:
+          cmds:
+            password encryption-key common: null
+          comments: []
+        no aaa root: null
+        no ip routing vrf MGMT: null
+        no service interface inactive port-id allocation disabled: null
+        ntp local-interface vrf MGMT Management0: null
+        ntp server vrf MGMT time1.google.com: null
+        ntp server vrf MGMT time2.google.com: null
+        ntp server vrf MGMT time3.google.com: null
+        route-map RM-CONN-2-BGP permit 10:
+          cmds:
+            match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY: null
+          comments: []
+        router bfd:
+          cmds:
+            multihop interval 300 min-rx 300 multiplier 3: null
+          comments: []
+        router bgp 65101:
+          cmds:
+            address-family evpn:
+              cmds:
+                neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            address-family ipv4:
+              cmds:
+                neighbor IPv4-UNDERLAY-PEERS activate: null
+                no neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            maximum-paths 4 ecmp 4: null
+            neighbor 172.31.255.0 description spine1_Ethernet1/1: null
+            neighbor 172.31.255.0 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.0 remote-as 65001: null
+            neighbor 172.31.255.2 description spine2_Ethernet1/1: null
+            neighbor 172.31.255.2 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.2 remote-as 65001: null
+            neighbor 192.0.255.1 description spine1: null
+            neighbor 192.0.255.1 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.1 remote-as 65001: null
+            neighbor 192.0.255.2 description spine2: null
+            neighbor 192.0.255.2 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.2 remote-as 65001: null
+            neighbor EVPN-OVERLAY-PEERS bfd: null
+            neighbor EVPN-OVERLAY-PEERS ebgp-multihop 3: null
+            neighbor EVPN-OVERLAY-PEERS maximum-routes 0: null
+            neighbor EVPN-OVERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor EVPN-OVERLAY-PEERS peer group: null
+            neighbor EVPN-OVERLAY-PEERS send-community: null
+            neighbor EVPN-OVERLAY-PEERS update-source Loopback0: null
+            neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000: null
+            neighbor IPv4-UNDERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor IPv4-UNDERLAY-PEERS peer group: null
+            neighbor IPv4-UNDERLAY-PEERS send-community: null
+            redistribute connected route-map RM-CONN-2-BGP: null
+            router-id 192.0.255.129: null
+            vlan 100:
+              cmds:
+                rd 192.0.255.129:10100: null
+                redistribute learned: null
+                route-target both 10100:10100: null
+              comments: []
+            vlan 200:
+              cmds:
+                rd 192.0.255.129:10200: null
+                redistribute learned: null
+                route-target both 10200:10200: null
+              comments: []
+            vrf TEST_VRF:
+              cmds:
+                rd 192.0.255.129:10: null
+                redistribute connected: null
+                route-target export evpn 10:10: null
+                route-target import evpn 10:10: null
+                router-id 192.0.255.129: null
+              comments: []
+          comments: []
+        router multicast:
+          cmds:
+            ipv4:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+            ipv6:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+          comments: []
+        service routing protocols model multi-agent: null
+        spanning-tree mode mstp: null
+        spanning-tree mst 0 priority 4096: null
+        system l1:
+          cmds:
+            unsupported error-correction action error: null
+            unsupported speed action error: null
+          comments: []
+        transceiver qsfp default-mode 4x10G: null
+        ? username cvpadmin privilege 15 role network-admin secret sha512 $6$aQjjIocu2Pxl0baz$.3hUsqFqET6CHtNoc2nKIrmwPY39NYBaG.l2dX1hmiUc46lWorrG7V25b5XeqwSCJnRs4pOe9teK1/5RK8mve/
+        : null
+        vlan 100:
+          cmds:
+            name TENANT_A_BGP_TO_COMPUTE: null
+          comments: []
+        vlan 200:
+          cmds:
+            name TENANT_A_TEST_L2_ONLY_VLAN: null
+          comments: []
+        vlan internal order ascending range 1006 1199: null
+        vrf instance MGMT:
+          cmds: {}
+          comments: []
+        vrf instance TEST_VRF:
+          cmds: {}
+          comments: []
+      comments: []
+      header:
+      - '! device: leaf1 (cEOSLab, EOS-4.34.1F-41910311.orinocorel (engineering build))'
+    "show ip bgp summary":
+      vrfs:
+        default:
+          asn: '65101'
+          peers:
+            172.31.255.0:
+              asn: '65001'
+              description: spine1_Ethernet1/1
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 3
+              prefixAdvertised: 3
+              prefixReceived: 3
+              underMaintenance: false
+              upDownTime: 1752573301.154339
+              version: 4
+            172.31.255.2:
+              asn: '65001'
+              description: spine2_Ethernet1/1
+              inMsgQueue: 0
+              msgReceived: 28
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 3
+              prefixAdvertised: 5
+              prefixReceived: 3
+              underMaintenance: false
+              upDownTime: 1752573301.305207
+              version: 4
+          routerId: 192.0.255.129
+          vrf: default
+    "show bgp evpn summary":
+      vrfs:
+        default:
+          asn: '65101'
+          peers:
+            192.0.255.1:
+              asn: '65001'
+              description: spine1
+              inMsgQueue: 0
+              msgReceived: 30
+              msgSent: 32
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 8
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573302.168907
+              version: 4
+            192.0.255.2:
+              asn: '65001'
+              description: spine2
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 30
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 4
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573302.334637
+              version: 4
+          routerId: 192.0.255.129
+          vrf: default
+  leaf2:
+    "show lldp neighbors":
+      lldpNeighbors:
+      - neighborDevice: spine1.lab.net
+        neighborPort: Ethernet2/1
+        port: Ethernet49/1
+        ttl: 120
+      - neighborDevice: spine2.lab.net
+        neighborPort: Ethernet2/1
+        port: Ethernet50/1
+        ttl: 120
+      - neighborDevice: spine2.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: spine1.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: leaf1.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      tablesAgeOuts: 0
+      tablesDeletes: 0
+      tablesDrops: 0
+      tablesInserts: 5
+      tablesLastChangeTime: 1752573287.7925317
+    "show ip interface brief":
+      interfaces:
+        Ethernet49/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.65
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet49/1
+          nonRoutableClassEIntf: false
+        Ethernet50/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.67
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet50/1
+          nonRoutableClassEIntf: false
+        Loopback0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.0.255.130
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback0
+          nonRoutableClassEIntf: false
+        Loopback1:
+          interfaceAddress:
+            ipAddr:
+              address: 192.0.254.2
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback1
+          nonRoutableClassEIntf: false
+        Loopback100:
+          interfaceAddress:
+            ipAddr:
+              address: 10.255.1.2
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback100
+          nonRoutableClassEIntf: false
+        Management0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.168.123.22
+              maskLen: 24
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Management0
+          nonRoutableClassEIntf: false
+        Vlan100:
+          interfaceAddress:
+            ipAddr:
+              address: 10.100.100.1
+              maskLen: 24
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Vlan100
+          nonRoutableClassEIntf: false
+        Vlan4097:
+          interfaceAddress:
+            ipAddr:
+              address: 0.0.0.0
+              maskLen: 0
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 9164
+          name: Vlan4097
+          nonRoutableClassEIntf: false
+    "show interfaces description":
+      interfaceDescriptions:
+        Ethernet49/1:
+          description: P2P_LINK_TO_SPINE1_Ethernet2/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Ethernet50/1:
+          description: P2P_LINK_TO_SPINE2_Ethernet2/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback0:
+          description: EVPN_Overlay_Peering
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback1:
+          description: VTEP_VXLAN_Tunnel_Source
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback100:
+          description: TEST_VRF_VTEP_DIAGNOSTICS
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Management0:
+          description: oob_management
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Port-Channel11:
+          description: host11_leaf1_to_host11
+          interfaceStatus: down
+          lineProtocolStatus: lowerLayerDown
+        Port-Channel12:
+          description: host12_leaf3_to_host12
+          interfaceStatus: down
+          lineProtocolStatus: lowerLayerDown
+        Vlan100:
+          description: TENANT_A_BGP_TO_COMPUTE
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Vlan4097:
+          description: ''
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Vxlan1:
+          description: leaf2_VTEP
+          interfaceStatus: up
+          lineProtocolStatus: up
+    "show version":
+      architecture: x86_64
+      bootupTimestamp: 1752572736.901067
+      configMacAddress: 00:00:00:00:00:00
+      hardwareRevision: ''
+      hwMacAddress: 00:00:00:00:00:00
+      imageFormatVersion: '1.0'
+      imageOptimization: None
+      internalBuildId: 375a0395-b269-4d4c-b708-8d7617e4924b
+      internalVersion: 4.34.1F-41910311.orinocorel
+      isIntlVersion: false
+      kernelVersion: 6.6.87.2-microsoft-standard-WSL2
+      memFree: 1393264
+      memTotal: 8064240
+      mfgName: Arista
+      modelName: cEOSLab
+      serialNumber: 55DAE829E0CE19FA7F07E09F87E125C3
+      systemMacAddress: 00:1c:73:9c:27:22
+      uptime: 1713.9869239330292
+      version: 4.34.1F-41910311.orinocorel (engineering build)
+    "show running-config":
+      cmds:
+        daemon TerminAttr:
+          cmds:
+            ? exec /usr/bin/TerminAttr -cvaddr=192.168.122.241:9910 -cvauth=key,qwerty -cvvrf=MGMT
+              -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent
+              -taillogs
+            : null
+            no shutdown: null
+          comments: []
+        dns domain lab.net: null
+        hostname leaf2: null
+        interface Ethernet1/1:
+          cmds:
+            channel-group 11 mode active: null
+            description host11_leaf2_Ethernet1/1: null
+          comments: []
+        interface Ethernet1/2:
+          cmds:
+            channel-group 12 mode active: null
+            description host12_leaf2_Ethernet1/2: null
+          comments: []
+        interface Ethernet49/1:
+          cmds:
+            description P2P_LINK_TO_SPINE1_Ethernet2/1: null
+            ip address 172.31.255.65/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Ethernet50/1:
+          cmds:
+            description P2P_LINK_TO_SPINE2_Ethernet2/1: null
+            ip address 172.31.255.67/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Loopback0:
+          cmds:
+            description EVPN_Overlay_Peering: null
+            ip address 192.0.255.130/32: null
+          comments: []
+        interface Loopback1:
+          cmds:
+            description VTEP_VXLAN_Tunnel_Source: null
+            ip address 192.0.254.2/32: null
+          comments: []
+        interface Loopback100:
+          cmds:
+            description TEST_VRF_VTEP_DIAGNOSTICS: null
+            ip address 10.255.1.2/32: null
+            vrf TEST_VRF: null
+          comments: []
+        interface Management0:
+          cmds:
+            description oob_management: null
+            ip address 192.168.123.22/24: null
+            vrf MGMT: null
+          comments: []
+        interface Port-Channel11:
+          cmds:
+            description host11_leaf1_to_host11: null
+            evpn ethernet-segment:
+              cmds:
+                identifier 0000:0000:d804:eca6:ffc4: null
+                route-target import d8:04:ec:a6:ff:c4: null
+              comments: []
+            lacp system-id d804.eca6.ffc4: null
+            switchport access vlan 200: null
+          comments: []
+        interface Port-Channel12:
+          cmds:
+            description host12_leaf3_to_host12: null
+            evpn ethernet-segment:
+              cmds:
+                identifier 0000:0000:1509:401c:dd4a: null
+                route-target import 15:09:40:1c:dd:4a: null
+              comments: []
+            lacp system-id 1509.401c.dd4a: null
+            switchport mode trunk: null
+            switchport trunk allowed vlan 100-150,200: null
+          comments: []
+        interface Vlan100:
+          cmds:
+            description TENANT_A_BGP_TO_COMPUTE: null
+            ip address virtual 10.100.100.1/24: null
+            vrf TEST_VRF: null
+          comments: []
+        interface Vxlan1:
+          cmds:
+            description leaf2_VTEP: null
+            vxlan source-interface Loopback1: null
+            vxlan udp-port 4789: null
+            vxlan vlan 100 vni 10100: null
+            vxlan vlan 200 vni 10200: null
+            vxlan vrf TEST_VRF vni 10: null
+          comments: []
+        ip address virtual source-nat vrf TEST_VRF address 10.255.1.2: null
+        ip name-server vrf MGMT 8.8.8.8: null
+        ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY:
+          cmds:
+            seq 10 permit 192.0.255.128/25 eq 32: null
+            seq 20 permit 192.0.254.0/24 eq 32: null
+          comments: []
+        ip route vrf MGMT 0.0.0.0/0 192.168.123.1: null
+        ip routing: null
+        ip routing vrf TEST_VRF: null
+        ip virtual-router mac-address 00:1c:73:00:dc:01: null
+        management api http-commands:
+          cmds:
+            no shutdown: null
+            vrf MGMT:
+              cmds:
+                no shutdown: null
+              comments: []
+          comments: []
+        management security:
+          cmds:
+            password encryption-key common: null
+          comments: []
+        no aaa root: null
+        no ip routing vrf MGMT: null
+        no service interface inactive port-id allocation disabled: null
+        ntp local-interface vrf MGMT Management0: null
+        ntp server vrf MGMT time1.google.com: null
+        ntp server vrf MGMT time2.google.com: null
+        ntp server vrf MGMT time3.google.com: null
+        route-map RM-CONN-2-BGP permit 10:
+          cmds:
+            match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY: null
+          comments: []
+        router bfd:
+          cmds:
+            multihop interval 300 min-rx 300 multiplier 3: null
+          comments: []
+        router bgp 65102:
+          cmds:
+            address-family evpn:
+              cmds:
+                neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            address-family ipv4:
+              cmds:
+                neighbor IPv4-UNDERLAY-PEERS activate: null
+                no neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            maximum-paths 4 ecmp 4: null
+            neighbor 172.31.255.64 description spine1_Ethernet2/1: null
+            neighbor 172.31.255.64 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.64 remote-as 65001: null
+            neighbor 172.31.255.66 description spine2_Ethernet2/1: null
+            neighbor 172.31.255.66 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.66 remote-as 65001: null
+            neighbor 192.0.255.1 description spine1: null
+            neighbor 192.0.255.1 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.1 remote-as 65001: null
+            neighbor 192.0.255.2 description spine2: null
+            neighbor 192.0.255.2 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.2 remote-as 65001: null
+            neighbor EVPN-OVERLAY-PEERS bfd: null
+            neighbor EVPN-OVERLAY-PEERS ebgp-multihop 3: null
+            neighbor EVPN-OVERLAY-PEERS maximum-routes 0: null
+            neighbor EVPN-OVERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor EVPN-OVERLAY-PEERS peer group: null
+            neighbor EVPN-OVERLAY-PEERS send-community: null
+            neighbor EVPN-OVERLAY-PEERS update-source Loopback0: null
+            neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000: null
+            neighbor IPv4-UNDERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor IPv4-UNDERLAY-PEERS peer group: null
+            neighbor IPv4-UNDERLAY-PEERS send-community: null
+            redistribute connected route-map RM-CONN-2-BGP: null
+            router-id 192.0.255.130: null
+            vlan 100:
+              cmds:
+                rd 192.0.255.130:10100: null
+                redistribute learned: null
+                route-target both 10100:10100: null
+              comments: []
+            vlan 200:
+              cmds:
+                rd 192.0.255.130:10200: null
+                redistribute learned: null
+                route-target both 10200:10200: null
+              comments: []
+            vrf TEST_VRF:
+              cmds:
+                rd 192.0.255.130:10: null
+                redistribute connected: null
+                route-target export evpn 10:10: null
+                route-target import evpn 10:10: null
+                router-id 192.0.255.130: null
+              comments: []
+          comments: []
+        router multicast:
+          cmds:
+            ipv4:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+            ipv6:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+          comments: []
+        service routing protocols model multi-agent: null
+        spanning-tree mode mstp: null
+        spanning-tree mst 0 priority 4096: null
+        system l1:
+          cmds:
+            unsupported error-correction action error: null
+            unsupported speed action error: null
+          comments: []
+        transceiver qsfp default-mode 4x10G: null
+        ? username cvpadmin privilege 15 role network-admin secret sha512 $6$aQjjIocu2Pxl0baz$.3hUsqFqET6CHtNoc2nKIrmwPY39NYBaG.l2dX1hmiUc46lWorrG7V25b5XeqwSCJnRs4pOe9teK1/5RK8mve/
+        : null
+        vlan 100:
+          cmds:
+            name TENANT_A_BGP_TO_COMPUTE: null
+          comments: []
+        vlan 200:
+          cmds:
+            name TENANT_A_TEST_L2_ONLY_VLAN: null
+          comments: []
+        vlan internal order ascending range 1006 1199: null
+        vrf instance MGMT:
+          cmds: {}
+          comments: []
+        vrf instance TEST_VRF:
+          cmds: {}
+          comments: []
+      comments: []
+      header:
+      - '! device: leaf2 (cEOSLab, EOS-4.34.1F-41910311.orinocorel (engineering build))'
+    "show ip bgp summary":
+      vrfs:
+        default:
+          asn: '65102'
+          peers:
+            172.31.255.64:
+              asn: '65001'
+              description: spine1_Ethernet2/1
+              inMsgQueue: 0
+              msgReceived: 28
+              msgSent: 28
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 3
+              prefixAdvertised: 3
+              prefixReceived: 3
+              underMaintenance: false
+              upDownTime: 1752573300.303881
+              version: 4
+            172.31.255.66:
+              asn: '65001'
+              description: spine2_Ethernet2/1
+              inMsgQueue: 0
+              msgReceived: 28
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 3
+              prefixAdvertised: 5
+              prefixReceived: 3
+              underMaintenance: false
+              upDownTime: 1752573300.319255
+              version: 4
+          routerId: 192.0.255.130
+          vrf: default
+    "show bgp evpn summary":
+      vrfs:
+        default:
+          asn: '65102'
+          peers:
+            192.0.255.1:
+              asn: '65001'
+              description: spine1
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 4
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573300.403034
+              version: 4
+            192.0.255.2:
+              asn: '65001'
+              description: spine2
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 32
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 8
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573301.349706
+              version: 4
+          routerId: 192.0.255.130
+          vrf: default
+  spine1:
+    "show lldp neighbors":
+      lldpNeighbors:
+      - neighborDevice: leaf1.lab.net
+        neighborPort: Ethernet49/1
+        port: Ethernet1/1
+        ttl: 120
+      - neighborDevice: leaf2.lab.net
+        neighborPort: Ethernet49/1
+        port: Ethernet2/1
+        ttl: 120
+      - neighborDevice: leaf2.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: spine2.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: leaf1.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      tablesAgeOuts: 0
+      tablesDeletes: 0
+      tablesDrops: 0
+      tablesInserts: 5
+      tablesLastChangeTime: 1752573287.7906592
+    "show ip interface brief":
+      interfaces:
+        Ethernet1/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.0
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet1/1
+          nonRoutableClassEIntf: false
+        Ethernet2/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.64
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet2/1
+          nonRoutableClassEIntf: false
+        Loopback0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.0.255.1
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback0
+          nonRoutableClassEIntf: false
+        Management0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.168.123.11
+              maskLen: 24
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Management0
+          nonRoutableClassEIntf: false
+    "show interfaces description":
+      interfaceDescriptions:
+        Ethernet1/1:
+          description: P2P_LINK_TO_LEAF1_Ethernet49/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Ethernet2/1:
+          description: P2P_LINK_TO_LEAF2_Ethernet49/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback0:
+          description: EVPN_Overlay_Peering
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Management0:
+          description: oob_management
+          interfaceStatus: up
+          lineProtocolStatus: up
+    "show version":
+      architecture: x86_64
+      bootupTimestamp: 1752572737.748956
+      configMacAddress: 00:00:00:00:00:00
+      hardwareRevision: ''
+      hwMacAddress: 00:00:00:00:00:00
+      imageFormatVersion: '1.0'
+      imageOptimization: None
+      internalBuildId: 375a0395-b269-4d4c-b708-8d7617e4924b
+      internalVersion: 4.34.1F-41910311.orinocorel
+      isIntlVersion: false
+      kernelVersion: 6.6.87.2-microsoft-standard-WSL2
+      memFree: 1335196
+      memTotal: 8064240
+      mfgName: Arista
+      modelName: cEOSLab
+      serialNumber: D71FFF3306E0CA35D95BE540DAD29DA4
+      systemMacAddress: 00:1c:73:d6:e1:9b
+      uptime: 1713.0073907375336
+      version: 4.34.1F-41910311.orinocorel (engineering build)
+    "show running-config":
+      cmds:
+        daemon TerminAttr:
+          cmds:
+            ? exec /usr/bin/TerminAttr -cvaddr=192.168.122.241:9910 -cvauth=key,qwerty -cvvrf=MGMT
+              -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent
+              -taillogs
+            : null
+            no shutdown: null
+          comments: []
+        dns domain lab.net: null
+        hostname spine1: null
+        interface Ethernet1/1:
+          cmds:
+            description P2P_LINK_TO_LEAF1_Ethernet49/1: null
+            ip address 172.31.255.0/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Ethernet2/1:
+          cmds:
+            description P2P_LINK_TO_LEAF2_Ethernet49/1: null
+            ip address 172.31.255.64/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Loopback0:
+          cmds:
+            description EVPN_Overlay_Peering: null
+            ip address 192.0.255.1/32: null
+          comments: []
+        interface Management0:
+          cmds:
+            description oob_management: null
+            ip address 192.168.123.11/24: null
+            vrf MGMT: null
+          comments: []
+        ip name-server vrf MGMT 8.8.8.8: null
+        ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY:
+          cmds:
+            seq 10 permit 192.0.255.0/25 eq 32: null
+          comments: []
+        ip route vrf MGMT 0.0.0.0/0 192.168.123.1: null
+        ip routing: null
+        management api http-commands:
+          cmds:
+            no shutdown: null
+            vrf MGMT:
+              cmds:
+                no shutdown: null
+              comments: []
+          comments: []
+        management security:
+          cmds:
+            password encryption-key common: null
+          comments: []
+        no aaa root: null
+        no ip routing vrf MGMT: null
+        no service interface inactive port-id allocation disabled: null
+        ntp local-interface vrf MGMT Management0: null
+        ntp server vrf MGMT time1.google.com: null
+        ntp server vrf MGMT time2.google.com: null
+        ntp server vrf MGMT time3.google.com: null
+        route-map RM-CONN-2-BGP permit 10:
+          cmds:
+            match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY: null
+          comments: []
+        router bfd:
+          cmds:
+            multihop interval 300 min-rx 300 multiplier 3: null
+          comments: []
+        router bgp 65001:
+          cmds:
+            address-family evpn:
+              cmds:
+                neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            address-family ipv4:
+              cmds:
+                neighbor IPv4-UNDERLAY-PEERS activate: null
+                no neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            maximum-paths 4 ecmp 4: null
+            neighbor 172.31.255.1 description leaf1_Ethernet49/1: null
+            neighbor 172.31.255.1 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.1 remote-as 65101: null
+            neighbor 172.31.255.65 description leaf2_Ethernet49/1: null
+            neighbor 172.31.255.65 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.65 remote-as 65102: null
+            neighbor 192.0.255.129 description leaf1: null
+            neighbor 192.0.255.129 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.129 remote-as 65101: null
+            neighbor 192.0.255.130 description leaf2: null
+            neighbor 192.0.255.130 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.130 remote-as 65102: null
+            neighbor EVPN-OVERLAY-PEERS bfd: null
+            neighbor EVPN-OVERLAY-PEERS ebgp-multihop 3: null
+            neighbor EVPN-OVERLAY-PEERS maximum-routes 0: null
+            neighbor EVPN-OVERLAY-PEERS next-hop-unchanged: null
+            neighbor EVPN-OVERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor EVPN-OVERLAY-PEERS peer group: null
+            neighbor EVPN-OVERLAY-PEERS send-community: null
+            neighbor EVPN-OVERLAY-PEERS update-source Loopback0: null
+            neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000: null
+            neighbor IPv4-UNDERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor IPv4-UNDERLAY-PEERS peer group: null
+            neighbor IPv4-UNDERLAY-PEERS send-community: null
+            redistribute connected route-map RM-CONN-2-BGP: null
+            router-id 192.0.255.1: null
+          comments: []
+        router multicast:
+          cmds:
+            ipv4:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+            ipv6:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+          comments: []
+        service routing protocols model multi-agent: null
+        spanning-tree mode none: null
+        system l1:
+          cmds:
+            unsupported error-correction action error: null
+            unsupported speed action error: null
+          comments: []
+        transceiver qsfp default-mode 4x10G: null
+        ? username cvpadmin privilege 15 role network-admin secret sha512 $6$aQjjIocu2Pxl0baz$.3hUsqFqET6CHtNoc2nKIrmwPY39NYBaG.l2dX1hmiUc46lWorrG7V25b5XeqwSCJnRs4pOe9teK1/5RK8mve/
+        : null
+        vlan internal order ascending range 1006 1199: null
+        vrf instance MGMT:
+          cmds: {}
+          comments: []
+      comments: []
+      header:
+      - '! device: spine1 (cEOSLab, EOS-4.34.1F-41910311.orinocorel (engineering build))'
+    "show ip bgp summary":
+      vrfs:
+        default:
+          asn: '65001'
+          peers:
+            172.31.255.1:
+              asn: '65101'
+              description: leaf1_Ethernet49/1
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 2
+              prefixAdvertised: 3
+              prefixReceived: 2
+              underMaintenance: false
+              upDownTime: 1752573301.154437
+              version: 4
+            172.31.255.65:
+              asn: '65102'
+              description: leaf2_Ethernet49/1
+              inMsgQueue: 0
+              msgReceived: 28
+              msgSent: 28
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 2
+              prefixAdvertised: 3
+              prefixReceived: 2
+              underMaintenance: false
+              upDownTime: 1752573300.304931
+              version: 4
+          routerId: 192.0.255.1
+          vrf: default
+    "show bgp evpn summary":
+      vrfs:
+        default:
+          asn: '65001'
+          peers:
+            192.0.255.129:
+              asn: '65101'
+              description: leaf1
+              inMsgQueue: 0
+              msgReceived: 32
+              msgSent: 30
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 4
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573302.167473
+              version: 4
+            192.0.255.130:
+              asn: '65102'
+              description: leaf2
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 4
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573300.398098
+              version: 4
+          routerId: 192.0.255.1
+          vrf: default
+  spine2:
+    "show lldp neighbors":
+      lldpNeighbors:
+      - neighborDevice: leaf1.lab.net
+        neighborPort: Ethernet50/1
+        port: Ethernet1/1
+        ttl: 120
+      - neighborDevice: leaf2.lab.net
+        neighborPort: Ethernet50/1
+        port: Ethernet2/1
+        ttl: 120
+      - neighborDevice: leaf2.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: spine1.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      - neighborDevice: leaf1.lab.net
+        neighborPort: Management0
+        port: Management0
+        ttl: 120
+      tablesAgeOuts: 0
+      tablesDeletes: 0
+      tablesDrops: 0
+      tablesInserts: 5
+      tablesLastChangeTime: 1752573287.7902477
+    "show ip interface brief":
+      interfaces:
+        Ethernet1/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.2
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet1/1
+          nonRoutableClassEIntf: false
+        Ethernet2/1:
+          interfaceAddress:
+            ipAddr:
+              address: 172.31.255.66
+              maskLen: 31
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Ethernet2/1
+          nonRoutableClassEIntf: false
+        Loopback0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.0.255.2
+              maskLen: 32
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 65535
+          name: Loopback0
+          nonRoutableClassEIntf: false
+        Management0:
+          interfaceAddress:
+            ipAddr:
+              address: 192.168.123.12
+              maskLen: 24
+          interfaceStatus: connected
+          ipv4Routable0: false
+          ipv4Routable240: false
+          lineProtocolStatus: up
+          mtu: 1500
+          name: Management0
+          nonRoutableClassEIntf: false
+    "show interfaces description":
+      interfaceDescriptions:
+        Ethernet1/1:
+          description: P2P_LINK_TO_LEAF1_Ethernet50/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Ethernet2/1:
+          description: P2P_LINK_TO_LEAF2_Ethernet50/1
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Loopback0:
+          description: EVPN_Overlay_Peering
+          interfaceStatus: up
+          lineProtocolStatus: up
+        Management0:
+          description: oob_management
+          interfaceStatus: up
+          lineProtocolStatus: up
+    "show version":
+      architecture: x86_64
+      bootupTimestamp: 1752572737.7569175
+      configMacAddress: 00:00:00:00:00:00
+      hardwareRevision: ''
+      hwMacAddress: 00:00:00:00:00:00
+      imageFormatVersion: '1.0'
+      imageOptimization: None
+      internalBuildId: 375a0395-b269-4d4c-b708-8d7617e4924b
+      internalVersion: 4.34.1F-41910311.orinocorel
+      isIntlVersion: false
+      kernelVersion: 6.6.87.2-microsoft-standard-WSL2
+      memFree: 1412268
+      memTotal: 8064240
+      mfgName: Arista
+      modelName: cEOSLab
+      serialNumber: CBD69A1E781897247C66F12722A91362
+      systemMacAddress: 00:1c:73:02:24:0c
+      uptime: 1713.3499674797058
+      version: 4.34.1F-41910311.orinocorel (engineering build)
+    "show running-config":
+      cmds:
+        daemon TerminAttr:
+          cmds:
+            ? exec /usr/bin/TerminAttr -cvaddr=192.168.122.241:9910 -cvauth=key,qwerty -cvvrf=MGMT
+              -smashexcludes=ale,flexCounter,hardware,kni,pulse,strata -ingestexclude=/Sysdb/cell/1/agent,/Sysdb/cell/2/agent
+              -taillogs
+            : null
+            no shutdown: null
+          comments: []
+        dns domain lab.net: null
+        hostname spine2: null
+        interface Ethernet1/1:
+          cmds:
+            description P2P_LINK_TO_LEAF1_Ethernet50/1: null
+            ip address 172.31.255.2/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Ethernet2/1:
+          cmds:
+            description P2P_LINK_TO_LEAF2_Ethernet50/1: null
+            ip address 172.31.255.66/31: null
+            mtu 1500: null
+            no switchport: null
+          comments: []
+        interface Loopback0:
+          cmds:
+            description EVPN_Overlay_Peering: null
+            ip address 192.0.255.2/32: null
+          comments: []
+        interface Management0:
+          cmds:
+            description oob_management: null
+            ip address 192.168.123.12/24: null
+            vrf MGMT: null
+          comments: []
+        ip name-server vrf MGMT 8.8.8.8: null
+        ip prefix-list PL-LOOPBACKS-EVPN-OVERLAY:
+          cmds:
+            seq 10 permit 192.0.255.0/25 eq 32: null
+          comments: []
+        ip route vrf MGMT 0.0.0.0/0 192.168.123.1: null
+        ip routing: null
+        management api http-commands:
+          cmds:
+            no shutdown: null
+            vrf MGMT:
+              cmds:
+                no shutdown: null
+              comments: []
+          comments: []
+        management security:
+          cmds:
+            password encryption-key common: null
+          comments: []
+        no aaa root: null
+        no ip routing vrf MGMT: null
+        no service interface inactive port-id allocation disabled: null
+        ntp local-interface vrf MGMT Management0: null
+        ntp server vrf MGMT time1.google.com: null
+        ntp server vrf MGMT time2.google.com: null
+        ntp server vrf MGMT time3.google.com: null
+        route-map RM-CONN-2-BGP permit 10:
+          cmds:
+            match ip address prefix-list PL-LOOPBACKS-EVPN-OVERLAY: null
+          comments: []
+        router bfd:
+          cmds:
+            multihop interval 300 min-rx 300 multiplier 3: null
+          comments: []
+        router bgp 65001:
+          cmds:
+            address-family evpn:
+              cmds:
+                neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            address-family ipv4:
+              cmds:
+                neighbor IPv4-UNDERLAY-PEERS activate: null
+                no neighbor EVPN-OVERLAY-PEERS activate: null
+              comments: []
+            maximum-paths 4 ecmp 4: null
+            neighbor 172.31.255.3 description leaf1_Ethernet50/1: null
+            neighbor 172.31.255.3 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.3 remote-as 65101: null
+            neighbor 172.31.255.67 description leaf2_Ethernet50/1: null
+            neighbor 172.31.255.67 peer group IPv4-UNDERLAY-PEERS: null
+            neighbor 172.31.255.67 remote-as 65102: null
+            neighbor 192.0.255.129 description leaf1: null
+            neighbor 192.0.255.129 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.129 remote-as 65101: null
+            neighbor 192.0.255.130 description leaf2: null
+            neighbor 192.0.255.130 peer group EVPN-OVERLAY-PEERS: null
+            neighbor 192.0.255.130 remote-as 65102: null
+            neighbor EVPN-OVERLAY-PEERS bfd: null
+            neighbor EVPN-OVERLAY-PEERS ebgp-multihop 3: null
+            neighbor EVPN-OVERLAY-PEERS maximum-routes 0: null
+            neighbor EVPN-OVERLAY-PEERS next-hop-unchanged: null
+            neighbor EVPN-OVERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor EVPN-OVERLAY-PEERS peer group: null
+            neighbor EVPN-OVERLAY-PEERS send-community: null
+            neighbor EVPN-OVERLAY-PEERS update-source Loopback0: null
+            neighbor IPv4-UNDERLAY-PEERS maximum-routes 12000: null
+            neighbor IPv4-UNDERLAY-PEERS password 7 $1c$caHDPKDBzOjl6ZrDQLicDQ==: null
+            neighbor IPv4-UNDERLAY-PEERS peer group: null
+            neighbor IPv4-UNDERLAY-PEERS send-community: null
+            redistribute connected route-map RM-CONN-2-BGP: null
+            router-id 192.0.255.2: null
+          comments: []
+        router multicast:
+          cmds:
+            ipv4:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+            ipv6:
+              cmds:
+                software-forwarding kernel: null
+              comments: []
+          comments: []
+        service routing protocols model multi-agent: null
+        spanning-tree mode none: null
+        system l1:
+          cmds:
+            unsupported error-correction action error: null
+            unsupported speed action error: null
+          comments: []
+        transceiver qsfp default-mode 4x10G: null
+        ? username cvpadmin privilege 15 role network-admin secret sha512 $6$aQjjIocu2Pxl0baz$.3hUsqFqET6CHtNoc2nKIrmwPY39NYBaG.l2dX1hmiUc46lWorrG7V25b5XeqwSCJnRs4pOe9teK1/5RK8mve/
+        : null
+        vlan internal order ascending range 1006 1199: null
+        vrf instance MGMT:
+          cmds: {}
+          comments: []
+      comments: []
+      header:
+      - '! device: spine2 (cEOSLab, EOS-4.34.1F-41910311.orinocorel (engineering build))'
+    "show ip bgp summary":
+      vrfs:
+        default:
+          asn: '65001'
+          peers:
+            172.31.255.3:
+              asn: '65101'
+              description: leaf1_Ethernet50/1
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 28
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 2
+              prefixAdvertised: 3
+              prefixReceived: 2
+              underMaintenance: false
+              upDownTime: 1752573301.306895
+              version: 4
+            172.31.255.67:
+              asn: '65102'
+              description: leaf2_Ethernet50/1
+              inMsgQueue: 0
+              msgReceived: 29
+              msgSent: 28
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 2
+              prefixAdvertised: 3
+              prefixReceived: 2
+              underMaintenance: false
+              upDownTime: 1752573300.321251
+              version: 4
+          routerId: 192.0.255.2
+          vrf: default
+    "show bgp evpn summary":
+      vrfs:
+        default:
+          asn: '65001'
+          peers:
+            192.0.255.129:
+              asn: '65101'
+              description: leaf1
+              inMsgQueue: 0
+              msgReceived: 30
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 4
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573302.334903
+              version: 4
+            192.0.255.130:
+              asn: '65102'
+              description: leaf2
+              inMsgQueue: 0
+              msgReceived: 32
+              msgSent: 29
+              outMsgQueue: 0
+              peerState: Established
+              prefixAccepted: 4
+              prefixAdvertised: 4
+              prefixReceived: 4
+              underMaintenance: false
+              upDownTime: 1752573301.347358
+              version: 4
+          routerId: 192.0.255.2
+          vrf: default
