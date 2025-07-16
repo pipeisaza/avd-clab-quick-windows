@@ -74,6 +74,7 @@ name_server:
     vrf: MGMT
   nodes:
   - 8.8.8.8
+  - 1.1.1.1
 spanning_tree:
   mode: none
 local_users:

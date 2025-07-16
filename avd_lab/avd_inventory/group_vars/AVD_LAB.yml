@@ -25,6 +25,7 @@ cvp_ingestauth_key: qwerty
 # dns servers
 name_servers:
  - 8.8.8.8
+ - 1.1.1.1
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Managment
 ntp:

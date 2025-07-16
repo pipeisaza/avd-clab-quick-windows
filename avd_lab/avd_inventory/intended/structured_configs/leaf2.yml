@@ -103,6 +103,7 @@ name_server:
     vrf: MGMT
   nodes:
   - 8.8.8.8
+  - 1.1.1.1
 spanning_tree:
   mode: mstp
   mst_instances:

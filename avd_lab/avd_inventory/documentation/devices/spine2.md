@@ -88,10 +88,12 @@ dns domain lab.net
 | Name Server | Source VRF |
 | ----------- | ---------- |
 | 8.8.8.8 | MGMT |
+| 1.1.1.1 | MGMT |
 
 ### Name Servers Device Configuration
 
 ```eos
+ip name-server vrf MGMT 1.1.1.1
 ip name-server vrf MGMT 8.8.8.8
 ```
 
