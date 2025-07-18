@@ -1,0 +1,57 @@
+---
+port_profiles:
+  ACCESS_V100:
+    mode: access
+    vlans: 100
+  ACCESS_V200:
+    mode: access
+    vlans: 200
+  TRUNK_PROFILE:
+    mode: trunk
+    vlans: 100,200
+
+servers:
+    # NOTE: the server template does not support multiple adapters
+    # just create a server with a different name prefix/postfix instead
+  host1:
+    rack: pod1_rack
+    adapters:
+    - switch_ports: ['Ethernet1/1']
+      switches: ['leaf1']
+      endpoint_ports: [ leaf1_Ethernet1/1 ]
+      profile: ACCESS_V100
+  host2:
+    rack: pod1_rack
+    adapters:
+    - switch_ports: ['Ethernet1/2']
+      switches: ['leaf2']
+      endpoint_ports: [ leaf2_Ethernet1/2 ]
+      profile: ACCESS_V200
+
+
+
+
+
+
+#  host21:
+#    rack: pod2_rack
+#    adapters:
+#    - switch_ports: ['Ethernet1/1', 'Ethernet1/1']
+#      switches: ['leaf3', 'leaf4']
+#      endpoint_ports: [ leaf3_Ethernet1/1,leaf4_Ethernet1/1, ]
+#      profile: ACCESS_PROFILE
+#      port_channel:
+#        description: leaf3_to_host21
+#        mode: active
+#        short_esi: 43fb:64ab:210c
+#  host22:
+#    rack: pod2_rack
+#    adapters:
+#    - switch_ports: ['Ethernet1/2', 'Ethernet1/2']
+#      switches: ['leaf3', 'leaf4']
+#      endpoint_ports: [ leaf3_Ethernet1/2,leaf4_Ethernet1/2, ]
+#      profile: VLAN150_PROFILE
+#      port_channel:
+#        description: leaf3_to_host22
+#        mode: active
+#        short_esi: 4640:0623:ea6b

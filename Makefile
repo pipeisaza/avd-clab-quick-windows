@@ -1,6 +1,6 @@
 CURRENT_DIR = $(shell pwd)
 DOCKER_NAME ?= avd-quickstart
-AVD_REPOSITORY_NAME ?= avd_lab
+AVD_REPOSITORY_NAME ?= avd
 
 .PHONY: help
 help: ## Display help message

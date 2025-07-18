@@ -1,7 +1,8 @@
 # AVD Quickstart Containerlab
 
 > **WARNING**
-I modify the original repository to reduce the number of nodes and hence the hardware pressure.
+I modified the original repository to reduce the number of nodes and hence the hardware pressure.
+I was able to run it on an old Windows 10 with 2 spines and 2 leafs.
 
 > This repository is still under construction. It's fully functional, but has number of limitations.
 > For example:
