@@ -41,7 +41,6 @@ all:
         AVD_FABRIC:
           vars:
             ansible_connection: httpapi
-            ansible_network_os: eos
             ansible_user: cvpadmin
             ansible_password: arista123
             ansible_network_os: eos

@@ -9,8 +9,12 @@ topology:
     ceos:
       startup-config: init-configs/ceos-cfg.j2
       image: ceos:4.34.1F
+    linux:
+      image: alpine
+#      image: arvindr226/alpine-ssh
   defaults:
     kind: ceos
+
   nodes:
     spine1:
       mgmt-ipv4: 192.168.123.11
@@ -18,7 +22,26 @@ topology:
       mgmt-ipv4: 192.168.123.21
     leaf2:
       mgmt-ipv4: 192.168.123.22
+    host1:
+      mgmt-ipv4: 192.168.123.31
+      kind: linux
+      exec:
+        - ifconfig eth1 10.100.100.10
+        - ifconfig eth1 netmask 255.255.255.0
+        - route add -net 10.200.200.0 netmask 255.255.255.0 gw 10.100.100.1
+# to connect to this host: docker exec -it container_id sh        
+    host2:
+      mgmt-ipv4: 192.168.123.32
+      kind: linux
+      exec:
+        - ifconfig eth1 10.200.200.20
+        - ifconfig eth1 netmask 255.255.255.0
+        - route add -net 10.100.100.0 netmask 255.255.255.0 gw 10.200.200.1
+    
 
   links:
   - endpoints: ["spine1:eth1_1", "leaf1:eth49_1"]
   - endpoints: ["spine1:eth2_1", "leaf2:eth49_1"]
+  - endpoints: ["leaf1:eth1_1", "host1:eth1"]
+  - endpoints: ["leaf2:eth1_2", "host2:eth1"]
+
